@@ -1,0 +1,146 @@
+/* Font: WorkSans, LarishNeue
+Farbe: #fff / #000
+font-family: 'Work Sans', sans-serif;
+font-family: 'LarishNeue';
+ */
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap");
+@import url("../font/Larish Neue Semibold.woff2");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Work Sans", sans-serif;
+}
+
+h1,
+h2 {
+  font-size: 70px;
+  font-family: "LarishNeue";
+}
+
+.button {
+  border: 1px solid #fff;
+  background-color: black;
+  color: #fff;
+  padding: 15px 3em;
+  margin-right: 5em;
+}
+
+.button:hover {
+  background-color: #fff;
+  color: black;
+}
+
+/* ########################### Header Stlyes ######################### */
+header {
+  background-color: #000;
+  color: #fff;
+  padding-bottom: 15vh;
+}
+header article:nth-of-type(1) {
+  text-align: center;
+  padding-top: 20vh;
+  margin-bottom: 15vh;
+}
+header article:nth-of-type(1) .verticalLine {
+  border-left: 2px solid #fff;
+  opacity: 0.5;
+  height: 10em;
+  width: 3px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+header article:nth-of-type(1) p {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+}
+header article:nth-of-type(1) p:nth-of-type(1) {
+  margin-top: 5vh;
+}
+header article:nth-of-type(1) h1,
+header article:nth-of-type(1) h2 {
+  letter-spacing: 2px;
+}
+header article:nth-of-type(1) h2 {
+  color: black;
+  -webkit-text-stroke: 1px white;
+  margin-top: -3.5vh;
+}
+header article:nth-of-type(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header article:nth-of-type(2) #img {
+  margin-left: 5em;
+}
+
+/* ############################### MAIN  Styles ############################### */
+main .sectionOne {
+  background-color: black;
+  color: #fff;
+  padding-top: 10vh;
+  padding-bottom: 15vh;
+}
+main .sectionOne h2 {
+  margin-left: 2em;
+  width: 55vw;
+}
+main .sectionOne article {
+  display: flex;
+  margin-left: 9em;
+}
+main .sectionOne article ul {
+  list-style: none;
+  margin-top: 15vh;
+}
+main .sectionOne article ul li:nth-of-type(even) {
+  font-size: 80px;
+  font-family: "LarishNeue";
+  margin-bottom: 3vh;
+}
+main .sectionOne article #map {
+  margin-left: 15vw;
+  width: 45vw;
+}
+
+main .sectionTwo .imgSameSize {
+  width: 20em;
+  height: 15em;
+}
+main .sectionTwo .imgBig {
+  width: 30em;
+  height: 20em;
+}
+main .sectionTwo article:nth-of-type(1) {
+  display: flex;
+  border: 5px solid blue;
+  justify-content: center;
+  align-content: center;
+  padding: 20%;
+}
+main .sectionTwo article:nth-of-type(1) #imgOne {
+  transform: translate(48vw, -50vh);
+}
+main .sectionTwo article:nth-of-type(1) #imgTwo {
+  transform: translate(-30vw, 8vh);
+}
+main .sectionTwo article:nth-of-type(2) {
+  border: 5px solid magenta;
+  padding: 20%;
+}
+main .sectionTwo article:nth-of-type(2) #imgFour {
+  width: 25em;
+  height: 20em;
+}
+main .sectionTwo article:nth-of-type(2) #imgFive {
+  width: 25em;
+  height: 25em;
+}
+main .sectionTwo article:nth-of-type(3) {
+  border: 5px solid green;
+  padding: 20%;
+}
+
+/*# sourceMappingURL=main.css.map */
