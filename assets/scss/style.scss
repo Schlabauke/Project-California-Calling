@@ -26,7 +26,20 @@ h2 {
     background-color: #fff;
     color: black;
 }
-
+@mixin sameStyle {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 9em;
+    margin-top: 15vh;
+    div:nth-of-type(2) {
+        margin-left: 25vw;
+        p:nth-of-type(1) {
+            padding: 1vh 5em 1em 0;
+            font-family: "LarishNeue";
+            font-size: 30px;
+        }
+    }
+}
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"),
     url("../font/Larish\ Neue\ Semibold.woff2");
 
@@ -112,39 +125,105 @@ main .sectionTwo {
         height: 20em;
     }
     article:nth-of-type(1) {
-        display: flex;
-        border: 5px solid blue;
-        justify-content: center;
-        align-content: center;
-        padding: 20%;
-
         #imgOne {
-            transform: translate(48vw, -50vh);
-        }
-        #imgTwo {
-            transform: translate(-30vw, 8vh);
-        }
-        #imgThree {
+            transform: translate(55vw, -10vh);
         }
     }
     article:nth-of-type(2) {
-        border: 5px solid magenta;
-        padding: 20%;
+        display: flex;
+        align-items: center;
+        margin: 15vh 0;
+        /*   border: 5px solid blue; */
+        justify-content: center;
+
+        #imgTwo {
+            transform: translate(4vw, -25vh);
+        }
+        #imgThree {
+            transform: translate(-4vw, 30vh);
+        }
+        div {
+            padding: 5em 10em;
+            p {
+                line-height: 25px;
+            }
+        }
+    }
+    article:nth-of-type(3) {
+        /* border: 5px solid magenta; */
+        margin: 20vh 0;
         #imgFour {
             width: 25em;
             height: 20em;
+            transform: translate(10vw, -10vh);
         }
         #imgFive {
             width: 25em;
             height: 25em;
+            transform: translate(25vw, 35vh);
         }
     }
-    article:nth-of-type(3) {
-        border: 5px solid green;
-        padding: 20%;
+    article:nth-of-type(4) {
+        /*  border: 5px solid green; */
+        margin-top: 35vh;
+        margin-bottom: 25vh;
+        display: flex;
+        justify-content: center;
+        p {
+            margin-left: 2.3em;
+            padding: 5em 0 5em 8em;
+            line-height: 25px;
+        }
         #imgSix {
+            transform: translate(3vw, -5vh);
         }
         #imgSeven {
+            transform: translate(-20vw, 35vh);
+        }
+    }
+}
+main .sectionThree {
+    background-color: black;
+    color: #fff;
+    padding-top: 10vh;
+    article:nth-of-type(1) {
+        @include sameStyle;
+    }
+    article:nth-of-type(2) {
+        /* border: 3px solid yellow; */
+        margin-top: 15vh;
+        #bearOne {
+            width: 45vw;
+            height: 83vh;
+            transform: translate(9em, 15vh);
+        }
+        #bearTwo {
+            width: 28vw;
+            transform: translate(5vw, 5vh);
+        }
+    }
+}
+main .sectionFour {
+    article:nth-of-type(1) {
+        #circle {
+            width: 35vw;
+            transform: translate(70vw, -18vh);
+        }
+    }
+    article:nth-of-type(2) {
+        @include sameStyle;
+        margin-top: 0;
+    }
+    article:nth-of-type(3) {
+        margin-top: 20vh;
+        margin-left: 2em;
+        #bearThree {
+            width: 25vw;
+            transform: translate(-38vw, -13vh);
+        }
+        #bearFour {
+            width: 50vw;
+            transform: translate(30vw, 0);
         }
     }
 }
