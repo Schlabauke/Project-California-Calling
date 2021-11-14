@@ -26,6 +26,11 @@ h2 {
     background-color: #fff;
     color: black;
 }
+.sectionFive,
+.sectionSix,
+.sectionSeven {
+    display: none;
+}
 @mixin sameStyle {
     display: flex;
     justify-content: space-between;
@@ -40,14 +45,17 @@ h2 {
         }
     }
 }
+@mixin sectionStyle {
+    background-color: #000;
+    color: #fff;
+    padding-bottom: 15vh;
+}
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600&display=swap"),
     url("../font/Larish\ Neue\ Semibold.woff2");
 
 /* ########################### Header Stlyes ######################### */
 header {
-    background-color: #000;
-    color: #fff;
-    padding-bottom: 15vh;
+    @include sectionStyle;
     article:nth-of-type(1) {
         text-align: center;
         padding-top: 20vh;
@@ -89,10 +97,9 @@ header {
 }
 /* ############################### MAIN  Styles ############################### */
 main .sectionOne {
-    background-color: black;
-    color: #fff;
+    @include sectionStyle;
     padding-top: 10vh;
-    padding-bottom: 15vh;
+
     h2 {
         margin-left: 2em;
         width: 55vw;
@@ -180,8 +187,7 @@ main .sectionTwo {
     }
 }
 main .sectionThree {
-    background-color: black;
-    color: #fff;
+    @include sectionStyle;
     padding-top: 10vh;
     article:nth-of-type(1) {
         @include sameStyle;
@@ -233,16 +239,10 @@ main .sectionFour {
             transform: translate(30vw, 0);
         }
     }
-    .sectionFive,
-    .sectionSix,
-    .sectionSeven {
-        display: none;
-    }
 }
 
 footer {
-    background-color: black;
-    color: white;
+    @include sectionStyle;
     padding-bottom: 5vh;
     overflow: hidden;
     .marquee {
