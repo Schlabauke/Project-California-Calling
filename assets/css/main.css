@@ -43,7 +43,7 @@ header article:nth-of-type(1) {
   margin-bottom: 15vh;
 }
 header article:nth-of-type(1) .verticalLine {
-  border-left: 2px solid #fff;
+  border-left: 2.5px solid #fff;
   opacity: 0.5;
   height: 10em;
   width: 3px;
@@ -120,7 +120,6 @@ main .sectionTwo article:nth-of-type(2) {
   display: flex;
   align-items: center;
   margin: 15vh 0;
-  /*   border: 5px solid blue; */
   justify-content: center;
 }
 main .sectionTwo article:nth-of-type(2) #imgTwo {
@@ -136,7 +135,6 @@ main .sectionTwo article:nth-of-type(2) div p {
   line-height: 25px;
 }
 main .sectionTwo article:nth-of-type(3) {
-  /* border: 5px solid magenta; */
   margin: 20vh 0;
 }
 main .sectionTwo article:nth-of-type(3) #imgFour {
@@ -150,7 +148,6 @@ main .sectionTwo article:nth-of-type(3) #imgFive {
   transform: translate(25vw, 35vh);
 }
 main .sectionTwo article:nth-of-type(4) {
-  /*  border: 5px solid green; */
   margin-top: 35vh;
   margin-bottom: 25vh;
   display: flex;
@@ -188,7 +185,6 @@ main .sectionThree article:nth-of-type(1) div:nth-of-type(2) p:nth-of-type(1) {
   font-size: 30px;
 }
 main .sectionThree article:nth-of-type(2) {
-  /* border: 3px solid yellow; */
   margin-top: 15vh;
 }
 main .sectionThree article:nth-of-type(2) #bearOne {
@@ -201,9 +197,22 @@ main .sectionThree article:nth-of-type(2) #bearTwo {
   transform: translate(5vw, 5vh);
 }
 
+main .sectionFour {
+  margin-bottom: 10vh;
+}
 main .sectionFour article:nth-of-type(1) #circle {
   width: 35vw;
   transform: translate(70vw, -18vh);
+  animation: rotate 10s infinite linear;
+  overflow: hidden;
+}
+@keyframes rotate {
+  from {
+    transform: translate(70vw, -18vh) rotate(0deg);
+  }
+  to {
+    transform: translate(70vw, -18vh) rotate(360deg);
+  }
 }
 main .sectionFour article:nth-of-type(2) {
   display: flex;
@@ -231,6 +240,182 @@ main .sectionFour article:nth-of-type(3) #bearThree {
 main .sectionFour article:nth-of-type(3) #bearFour {
   width: 50vw;
   transform: translate(30vw, 0);
+}
+main .sectionFour .sectionFive,
+main .sectionFour .sectionSix,
+main .sectionFour .sectionSeven {
+  display: none;
+}
+
+footer {
+  background-color: black;
+  color: white;
+  padding-bottom: 5vh;
+  overflow: hidden;
+}
+footer .marquee {
+  background-color: #fff;
+  color: black;
+  text-align: center;
+  transform: matrix(0.79, 0.62, -0.62, 0.79, 500, 265);
+}
+footer .marquee h2 {
+  animation: run 2s infinite linear;
+}
+footer .marquee h2 span {
+  font-family: "LarishNeue";
+  color: white;
+  -webkit-text-stroke: 1.5px black;
+}
+@keyframes run {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-10%);
+  }
+}
+footer article:nth-of-type(1) {
+  margin: 10vh 0 15vh 9em;
+  width: 40vw;
+}
+footer article:nth-of-type(1) p:nth-of-type(2) {
+  font-family: "LarishNeue";
+  font-size: 40px;
+  margin: 2vh 0;
+}
+footer article:nth-of-type(1) .button {
+  margin-top: 5vh;
+  font-size: 20px;
+}
+footer article:nth-of-type(2) {
+  margin-left: 9em;
+}
+footer article:nth-of-type(2) img {
+  width: 2vw;
+}
+footer article:nth-of-type(3) {
+  margin-left: 9em;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+footer article:nth-of-type(3) div:nth-of-type(1) p {
+  font-size: 20px;
+}
+footer article:nth-of-type(3) div:nth-of-type(2) {
+  margin-right: 4em;
+}
+footer article:nth-of-type(3) div:nth-of-type(2) img {
+  width: 8vw;
+}
+
+/* ############################ MediaQueries ############################# */
+@media only screen and (max-width: 600px) {
+  .sectionTwo,
+.sectionThree,
+.sectionFour {
+    display: none;
+  }
+
+  .sectionFive,
+.sectionSix,
+.sectionSeven {
+    display: block;
+    margin: 3em 2em;
+  }
+
+  h2 {
+    font-size: 45px;
+  }
+
+  .picWidth {
+    width: 30%;
+    margin: 10vh 0;
+  }
+
+  .picWidthFirstLine {
+    width: 49%;
+    margin: 8vh 0;
+  }
+
+  .sectionOne article {
+    background: url("../img/map.svg") right/contain no-repeat;
+  }
+  .sectionOne article ul {
+    list-style: none;
+    margin-top: 10vh;
+  }
+  .sectionOne article ul li:nth-of-type(even) {
+    font-size: 20px;
+    font-family: "LarishNeue";
+    margin-bottom: 3vh;
+  }
+  .sectionOne article #map {
+    display: none;
+  }
+
+  .sectionFive article:nth-of-type(3) {
+    margin-left: 5vw;
+  }
+
+  #rotateAnimation {
+    animation: rotate 10s infinite linear;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  .sectionSeven article:nth-of-type(2) {
+    margin: 5vh 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  .sectionSeven article:nth-of-type(2) img:nth-of-type(1) {
+    width: 45vw;
+  }
+  .sectionSeven article:nth-of-type(2) img:nth-of-type(2) {
+    width: 35vw;
+  }
+
+  footer .marquee {
+    margin-top: 3vh;
+    transform: none;
+  }
+  footer .marquee h2 {
+    animation: run 5s infinite linear;
+    font-size: 30px;
+  }
+  @keyframes run {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  footer article:nth-of-type(1) {
+    margin: 5vh 8vw;
+    width: 70vw;
+  }
+  footer article:nth-of-type(1) p:nth-of-type(2) {
+    font-size: 30px;
+  }
+  footer article:nth-of-type(1) .button {
+    font-size: 13px;
+  }
+  footer article:nth-of-type(2),
+footer article:nth-of-type(3) {
+    margin-left: 8vw;
+  }
+  footer article:nth-of-type(3) div:nth-of-type(1) p {
+    font-size: 13px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

@@ -53,7 +53,7 @@ header {
         padding-top: 20vh;
         margin-bottom: 15vh;
         .verticalLine {
-            border-left: 2px solid #fff;
+            border-left: 2.5px solid #fff;
             opacity: 0.5;
             height: 10em;
             width: 3px;
@@ -133,7 +133,6 @@ main .sectionTwo {
         display: flex;
         align-items: center;
         margin: 15vh 0;
-        /*   border: 5px solid blue; */
         justify-content: center;
 
         #imgTwo {
@@ -150,7 +149,6 @@ main .sectionTwo {
         }
     }
     article:nth-of-type(3) {
-        /* border: 5px solid magenta; */
         margin: 20vh 0;
         #imgFour {
             width: 25em;
@@ -164,7 +162,6 @@ main .sectionTwo {
         }
     }
     article:nth-of-type(4) {
-        /*  border: 5px solid green; */
         margin-top: 35vh;
         margin-bottom: 25vh;
         display: flex;
@@ -190,7 +187,6 @@ main .sectionThree {
         @include sameStyle;
     }
     article:nth-of-type(2) {
-        /* border: 3px solid yellow; */
         margin-top: 15vh;
         #bearOne {
             width: 45vw;
@@ -204,10 +200,21 @@ main .sectionThree {
     }
 }
 main .sectionFour {
+    margin-bottom: 10vh;
     article:nth-of-type(1) {
         #circle {
             width: 35vw;
             transform: translate(70vw, -18vh);
+            animation: rotate 10s infinite linear;
+            overflow: hidden;
+        }
+        @keyframes rotate {
+            from {
+                transform: translate(70vw, -18vh) rotate(0deg);
+            }
+            to {
+                transform: translate(70vw, -18vh) rotate(360deg);
+            }
         }
     }
     article:nth-of-type(2) {
@@ -224,6 +231,187 @@ main .sectionFour {
         #bearFour {
             width: 50vw;
             transform: translate(30vw, 0);
+        }
+    }
+    .sectionFive,
+    .sectionSix,
+    .sectionSeven {
+        display: none;
+    }
+}
+
+footer {
+    background-color: black;
+    color: white;
+    padding-bottom: 5vh;
+    overflow: hidden;
+    .marquee {
+        background-color: #fff;
+        color: black;
+        text-align: center;
+        transform: matrix(0.79, 0.62, -0.62, 0.79, 500, 265);
+        h2 {
+            animation: run 2s infinite linear;
+            span {
+                font-family: "LarishNeue";
+                color: white;
+                -webkit-text-stroke: 1.5px black;
+            }
+        }
+        @keyframes run {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-10%);
+            }
+        }
+    }
+    article:nth-of-type(1) {
+        margin: 10vh 0 15vh 9em;
+        width: 40vw;
+        p:nth-of-type(2) {
+            font-family: "LarishNeue";
+            font-size: 40px;
+            margin: 2vh 0;
+        }
+        .button {
+            margin-top: 5vh;
+            font-size: 20px;
+        }
+    }
+    article:nth-of-type(2) {
+        margin-left: 9em;
+        img {
+            width: 2vw;
+        }
+    }
+    article:nth-of-type(3) {
+        margin-left: 9em;
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        div:nth-of-type(1) {
+            p {
+                font-size: 20px;
+            }
+        }
+        div:nth-of-type(2) {
+            margin-right: 4em;
+            img {
+                width: 8vw;
+            }
+        }
+    }
+}
+/* ############################ MediaQueries ############################# */
+@media only screen and (max-width: 600px) {
+    .sectionTwo,
+    .sectionThree,
+    .sectionFour {
+        display: none;
+    }
+    .sectionFive,
+    .sectionSix,
+    .sectionSeven {
+        display: block;
+        margin: 3em 2em;
+    }
+    h2 {
+        font-size: 45px;
+    }
+    .picWidth {
+        width: 30%;
+        margin: 10vh 0;
+    }
+    .picWidthFirstLine {
+        width: 49%;
+        margin: 8vh 0;
+    }
+
+    .sectionOne {
+        article {
+            background: url("../img/map.svg") right/contain no-repeat;
+            ul {
+                list-style: none;
+                margin-top: 10vh;
+                li:nth-of-type(even) {
+                    font-size: 20px;
+                    font-family: "LarishNeue";
+                    margin-bottom: 3vh;
+                }
+            }
+            #map {
+                display: none;
+            }
+        }
+    }
+    .sectionFive {
+        article:nth-of-type(3) {
+            margin-left: 5vw;
+        }
+    }
+    #rotateAnimation {
+        animation: rotate 10s infinite linear;
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    }
+    .sectionSeven {
+        article:nth-of-type(2) {
+            margin: 5vh 0;
+            display: flex;
+            justify-content: space-between;
+            img:nth-of-type(1) {
+                width: 45vw;
+            }
+            img:nth-of-type(2) {
+                width: 35vw;
+            }
+        }
+    }
+    footer {
+        .marquee {
+            margin-top: 3vh;
+            transform: none;
+            h2 {
+                animation: run 5s infinite linear;
+                font-size: 30px;
+            }
+        }
+        @keyframes run {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+        article:nth-of-type(1) {
+            margin: 5vh 8vw;
+            width: 70vw;
+            p:nth-of-type(2) {
+                font-size: 30px;
+            }
+            .button {
+                font-size: 13px;
+            }
+        }
+        article:nth-of-type(2),
+        article:nth-of-type(3) {
+            margin-left: 8vw;
+        }
+        article:nth-of-type(3) {
+            div:nth-of-type(1) {
+                p {
+                    font-size: 13px;
+                }
+            }
         }
     }
 }
